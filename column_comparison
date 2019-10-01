@@ -1,0 +1,11 @@
+def column_comparison(df1, df2, col1, col2):
+    #Function to find duplicate fields in two different columns
+    
+    list_1=[mnemonic for mnemonic in df1[col1]] #list to iterate on
+    gen_1=(mnemonic for mnemonic in df2[col2]) #generator to iterate with
+    k=0
+    for i in gen_1: #goes over the generator
+        if i in list_1: # iterates over the list
+            print(i)
+            k=k+1
+    print(k)
