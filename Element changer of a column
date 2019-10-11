@@ -1,0 +1,17 @@
+import pandas as pd
+import re
+
+def mnemonic_to_macro(df, column, pattern):
+    col = df[column]
+    lista=[]
+    for i in mnemonics:
+        if re.match(pattern, i):
+            i = 'def @@'+str(i)+':("'+str(i)+'");' """in here you change each elemnt to whatever you want. In this case, 
+            I get all the strings and transform them in def @@string: ('string');"""
+            lista.append(i)
+    return lista
+df = pd.read_csv('mnemonic_mod.csv')
+
+lista = mnemonic_to_macro(df)
+
+csv = pd.DataFrame(lista)
