@@ -8,4 +8,4 @@ def column_comparison(df1, df2, col1, col2):
         if i in list_1: # iterates over the list
             print(i)
             k=k+1
-    print(k)
+    print(k) #count the number of elements
